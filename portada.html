@@ -1,0 +1,606 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    
+  
+      <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  
+      <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+      <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+      <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <title>CodePen - Animated Slider</title>
+  
+    <link rel="stylesheet" media="screen" href="https://cpwebassets.codepen.io/assets/fullpage/fullpage-9a6f5ffcc359b81b95df109e4b8ce436f472f4f828fcc75227cd5266125d459b.css">
+    
+  
+      <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  
+      <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+      <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+      <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  
+  
+  
+  
+  
+    <title>CodePen - Animated Slider</title>
+  
+    <style>
+      html { font-size: 15px; }
+      html, body { margin: 0; padding: 0; min-height: 100%; }
+      body { height:100%; display: flex; flex-direction: column; }
+      .referer-warning {
+        background: black;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        padding: 0.75em;
+        color: white;
+        text-align: center;
+        font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, system-ui, Sans-Serif;
+        line-height: 1.2;
+        font-size: 1rem;
+        position: relative;
+        z-index: 2;
+      }
+      .referer-warning span { font-family: initial; }
+      .referer-warning h1 { font-size: 1.2rem; margin: 0; }
+      .referer-warning a { color: #56bcf9; }
+    </style>
+  </head>
+  
+  <body class="">
+    
+  
+    <div id="result-iframe-wrap" role="main">
+      <iframe id="result" srcdoc="<!DOCTYPE html>
+  <html lang=&quot;en&quot; >
+  
+  <head>
+    <meta charset=&quot;UTF-8&quot;>
+    
+  
+      <link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+  
+      <meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+  
+      <link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+  
+      <link rel=&quot;mask-icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg&quot; color=&quot;#111&quot; />
+  
+  
+  
+    
+    <title>CodePen - Animated Slider</title>
+      <link rel=&quot;canonical&quot; href=&quot;https://codepen.io/aaronmcg/pen/bGbQGqK&quot; />
+    <meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;>
+  <link href=&quot;https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,500|Roboto:400,500,700&amp;display=swap&quot; rel=&quot;stylesheet&quot;>
+  
+    
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css'>
+    
+  <style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: &quot;Roboto&quot;, sans-serif;
+    background: black;
+    overflow: hidden;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  li,
+  p,
+  a,
+  button {
+    color: white;
+  }
+  
+  h2 {
+    font-family: &quot;Cormorant Garamond&quot;, serif;
+    font-weight: 300;
+  }
+  
+  .c-header {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  .c-header__title {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin: 0 2rem;
+  }
+  
+  .c-navigation {
+    flex-basis: 70%;
+  }
+  
+  .c-navigation__list {
+    padding: 0;
+  }
+  
+  .c-navigation__list-item {
+    display: inline-block;
+    margin: 0 2rem;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    opacity: 0.7;
+    font-weight: 500;
+  }
+  .c-navigation__list-item:after {
+    content: &quot;&quot;;
+    width: 2px;
+    height: 100%;
+    background: white;
+    position: absolute;
+    display: inline-block;
+    right: -2rem;
+  }
+  
+  .c-navigation__list-item:last-of-type:after {
+    background: transparent;
+  }
+  
+  .c-navigation__list-item--active {
+    opacity: 1;
+  }
+  .c-navigation__list-item--active > a {
+    position: relative;
+  }
+  .c-navigation__list-item--active > a:after {
+    content: &quot;&quot;;
+    width: 100%;
+    height: 1px;
+    background-color: #ff4c42;
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0;
+  }
+  
+  .c-cta {
+    display: flex;
+    align-items: center;
+  }
+  .c-cta > a {
+    font-size: 0.9em;
+    opacity: 0.7;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0 2rem;
+  }
+  
+  .c-cta__button {
+    border: 0;
+    background-color: transparent;
+    display: inline-block;
+  }
+  
+  .c-cta__button__search {
+    width: 15px;
+    height: 15px;
+    margin-right: 3rem;
+  }
+  .c-cta__button__search svg {
+    width: inherit;
+    height: inherit;
+    fill: white;
+  }
+  
+  .c-cta__button__menu {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+  }
+  .c-cta__button__menu:after, .c-cta__button__menu:before {
+    content: &quot;&quot;;
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+  }
+  .c-cta__button__menu:after {
+    bottom: -5px;
+  }
+  .c-cta__button__menu:before {
+    top: -5px;
+  }
+  
+  .c-socials {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    padding: 1.8rem 1.8rem 0.8rem 1.8rem;
+    z-index: 2;
+  }
+  
+  .c-socials__list-item {
+    margin-bottom: 1rem;
+  }
+  .c-socials__list-item a svg {
+    width: 21px;
+    height: 21px;
+  }
+  
+  .c-slide {
+    display: inline-flex !important;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    will-change: background-size;
+    position: relative;
+    transition: 1s ease;
+    transition-delay: 0.4s;
+  }
+  .c-slide:after {
+    content: &quot;&quot;;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.61) 76%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&quot;#00000000&quot;, endColorstr=&quot;#9c000000&quot;, GradientType=0 );
+  }
+  
+  .c-slide-content {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 2;
+    max-width: 1200px;
+  }
+  
+  .c-slide__title {
+    font-size: 4em;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 0.8s ease;
+    will-change: opacity, transform;
+  }
+  
+  .c-slide__title--large,
+  .c-slide__title--medium {
+    display: block;
+    font-size: 2.5em;
+    line-height: 110px;
+    transform: translateY(150px);
+    will-change: transform;
+    transition-delay: 0.4s;
+    position: relative;
+    transition: 1s ease;
+  }
+  
+  .c-slide__title--medium {
+    font-size: 1.6em;
+    line-height: 100px;
+  }
+  
+  .c-slide__subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .c-slide__body {
+    margin-top: 0.7rem;
+    opacity: 0;
+    line-height: 27px;
+  }
+  
+  .c-slide__info {
+    transform: translateY(-150px);
+    transition: 0.8s ease;
+  }
+  
+  .c-wrap {
+    padding: 2rem 0;
+    overflow: hidden;
+  }
+  
+  .c-wrap--small {
+    max-width: 30%;
+  }
+  
+  .c-wrap--line {
+    position: relative;
+  }
+  .c-wrap--line:after {
+    content: &quot;&quot;;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: white;
+    bottom: 0;
+    transition: 0.9s ease;
+    transition-delay: 0.4s;
+  }
+  
+  .slick-list {
+    overflow: visible !important;
+  }
+  
+  .animateIn .c-slide__title--large,
+  .animateIn .c-slide__title--medium,
+  .animateIn .c-slide__info,
+  .animateIn .c-slide__title,
+  .animateIn .c-slide__body,
+  .initialAnimation .c-slide__title--large,
+  .initialAnimation .c-slide__title--medium,
+  .initialAnimation .c-slide__info,
+  .initialAnimation .c-slide__title,
+  .initialAnimation .c-slide__body {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .animateIn .c-wrap--line:after,
+  .initialAnimation .c-wrap--line:after {
+    left: 0;
+    transform: translateX(0);
+    width: 100%;
+  }
+  
+  .slick-list {
+    transition: 0.5s ease;
+  }
+  
+  .u-scale-out {
+    transform: scale(0.6) !important;
+    transition: 0.5s ease;
+  }
+  
+  .u-scale-in {
+    transform: scale(1);
+  }
+  
+  @media only screen and (max-width: 1300px) {
+    .c-slide__title {
+      font-size: 3em;
+    }
+  
+    .c-slide__title--large {
+      font-size: 2em;
+    }
+  
+    .c-wrap--small {
+      max-width: 50%;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    .c-navigation {
+      display: none;
+    }
+  
+    .c-header {
+      justify-content: space-between;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .c-slide__title--medium {
+      font-size: 1.3em;
+    }
+  
+    .c-slide__title {
+      font-size: 2.5em;
+    }
+  
+    .c-slide__title--large {
+      font-size: 1.5em;
+    }
+  
+    .c-wrap--small {
+      max-width: 80%;
+    }
+  }
+  </style>
+  
+    <script>
+    window.console = window.console || function(t) {};
+  </script>
+  
+    
+    
+  </head>
+  
+  <body translate=&quot;no&quot;>
+    <!-- Design and content inspired from Giulio Cuscito :- https://dribbble.com/shots/7129691--Blue-Planet-Carousel-Concept -->
+  
+  
+  
+  <header class='c-header'>
+    <h1 class='c-header__title'>El Mentalista Marcos</h1>
+    <nav class='c-navigation'>
+      <ul class='c-navigation__list'>
+        <li class='c-navigation__list-item c-navigation__list-item--active'><a href='#' title=''>Nuestros servicios</a></li>
+        <li class='c-navigation__list-item'><a href='#' title=''>Testimonios</a></li>
+        <li class='c-navigation__list-item'><a href='#' title=''>Agenda tu cita</a></li>
+      </ul>
+    </nav>
+    <div class='c-cta'>
+      <a href='' title=''>Subscribete</a>
+      <button class='c-cta__button c-cta__button__search'><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 56.966 56.966&quot;><path d=&quot;M55.146 51.887L41.588 37.786c3.486-4.144 5.396-9.358 5.396-14.786 0-12.682-10.318-23-23-23s-23 10.318-23 23 10.318 23 23 23c4.761 0 9.298-1.436 13.177-4.162l13.661 14.208c.571.593 1.339.92 2.162.92.779 0 1.518-.297 2.079-.837 1.192-1.147 1.23-3.049.083-4.242zM23.984 6c9.374 0 17 7.626 17 17s-7.626 17-17 17-17-7.626-17-17 7.626-17 17-17z&quot;/></svg></button>
+      <button class='c-cta__button c-cta__button__menu'></button>
+    </div>
+  </header>
+  
+  <div class='c-socials'>
+    <ul class='c-socials__list'>
+      <li class='c-socials__list-item'><a href='' title=''><svg height=&quot;512&quot; viewBox=&quot;0 0 24 24&quot; width=&quot;512&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path d=&quot;M3 24h9v-8.25H9V12h3V9c0-2.486 2.014-4.5 4.5-4.5h3v3.75H18c-.828 0-1.5-.078-1.5.75v3h3.75l-1.5 3.75H16.5V24H21c1.654 0 3-1.346 3-3V3c0-1.655-1.346-3-3-3H3C1.345 0 0 1.345 0 3v18c0 1.654 1.345 3 3 3z&quot;/></svg></a></li>
+      <li class='c-socials__list-item'><svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 512 512&quot;><path d=&quot;M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z&quot;/></svg>
+        <a href='' title=''></a>
+      </li>
+      <li class='c-socials__list-item'><a href='' title=''><svg height=&quot;512pt&quot; viewBox=&quot;0 0 512 512.00006&quot; width=&quot;512pt&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;><path d=&quot;M261.039062 512c-1.695312 0-3.390624 0-5.097656-.007812-40.132812.097656-77.214844-.921876-113.277344-3.117188-33.0625-2.011719-63.242187-13.4375-87.28125-33.039062-23.195312-18.914063-39.035156-44.488282-47.078124-76.003907-7-27.4375-7.371094-54.371093-7.726563-80.421875C.320312 300.71875.0546875 278.570312 0 256.046875c.0546875-22.617187.320312-44.765625.578125-63.457031.355469-26.046875.726563-52.980469 7.726563-80.421875C16.347656 80.652344 32.1875 55.078125 55.382812 36.164062 79.421875 16.5625 109.601562 5.136719 142.667969 3.125 178.730469.933594 215.820312-.0898438 256.039062.0078125 296.183594-.078125 333.253906.933594 369.316406 3.125c33.0625 2.011719 63.242188 13.4375 87.28125 33.039062 23.199219 18.914063 39.035156 44.488282 47.078125 76.003907 7 27.4375 7.371094 54.375 7.726563 80.421875.257812 18.691406.527344 40.839844.578125 63.363281v.09375c-.050781 22.523437-.320313 44.671875-.578125 63.363281-.355469 26.046875-.722656 52.980469-7.726563 80.421875-8.042969 31.515625-23.878906 57.089844-47.078125 76.003907-24.039062 19.601562-54.21875 31.027343-87.28125 33.039062C334.78125 510.976562 299.304688 512 261.039062 512zm-5.097656-40.007812c39.480469.09375 75.730469-.902344 110.945313-3.042969 25-1.519531 46.675781-9.632813 64.433593-24.113281 16.414063-13.386719 27.71875-31.855469 33.597657-54.894532 5.828125-22.839844 6.164062-47.363281 6.488281-71.078125.253906-18.566406.519531-40.558593.574219-62.863281-.054688-22.308594-.320313-44.296875-.574219-62.863281-.324219-23.714844-.660156-48.238281-6.488281-71.082031-5.878907-23.039063-17.183594-41.507813-33.597657-54.894532-17.757812-14.476562-39.433593-22.589844-64.433593-24.109375-35.214844-2.144531-71.464844-3.132812-110.851563-3.046875-39.472656-.09375-75.726562.902344-110.941406 3.046875-25 1.519531-46.675781 9.632813-64.433594 24.109375-16.414062 13.386719-27.71875 31.855469-33.597656 54.894532-5.828125 22.84375-6.164062 47.363281-6.488281 71.082031-.253907 18.582031-.519531 40.585937-.574219 62.910156.054688 22.226563.320312 44.234375.574219 62.816406.324219 23.714844.660156 48.238281 6.488281 71.078125 5.878906 23.039063 17.183594 41.507813 33.597656 54.894532 17.757813 14.476562 39.433594 22.589843 64.433594 24.109374 35.214844 2.144532 71.476562 3.144532 110.847656 3.046876zM254.988281 381c-68.921875 0-125-56.074219-125-125s56.078125-125 125-125c68.925781 0 125 56.074219 125 125s-56.074219 125-125 125zm0-210c-46.867187 0-85 38.132812-85 85s38.132813 85 85 85c46.871094 0 85-38.132812 85-85s-38.128906-85-85-85zm139-80c-16.566406 0-30 13.429688-30 30s13.433594 30 30 30c16.570313 0 30-13.429688 30-30s-13.429687-30-30-30zm0 0&quot;/></svg></a></li>
+    </ul>
+  </div>
+  
+  <section class='c-slider'>
+    <div class='c-slider-init'>
+  
+      <div class='c-slide' style='background-image:url(https://img.freepik.com/free-photo/voodoo-doll-esoteric-elements-view_23-2149514245.jpg?w=740&t=st=1683992070~exp=1683992670~hmac=0599f85ab4e446a5e935f200019e78d133cfcb64446d0047861cd692ded71563)'>
+        <div class='c-slide-content'>
+          <div class='c-wrap c-wrap--line'>
+            <h2 class='c-slide__title'>
+              Amarres y Echizos
+              <span class='c-slide__title--large'>para el Amor</span>
+            </h2>
+          </div>
+          <div class='c-wrap c-wrap--small'>
+            <div class='c-slide__info'>
+              <h3 class='c-slide__subtitle'>Volver a amar es posible</h3>
+              <p class='c-slide__body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class='c-slide' style='background-image:url(https://img.freepik.com/free-photo/friends-admiring-sunset-while-having-beer_23-2148733714.jpg?w=740&t=st=1684001539~exp=1684002139~hmac=16c2fc32b30fad61b14f349713fedc6110522064c8773215164af8eb14e4ed6c)'>
+        <div class='c-slide-content'>
+          <div class='c-wrap c-wrap--line'>
+            <h2 class='c-slide__title'>
+              obtendras mucho  
+              <span class='c-slide__title--medium'>Dinero y Exito</span>
+            </h2>
+          </div>
+          <div class='c-wrap c-wrap--small'>
+            <div class='c-slide__info'>
+              <h3 class='c-slide__subtitle'>Eliminaremos las barreras que te impiden alcanzar el exito</h3>
+              <p class='c-slide__body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class='c-slide' style='background-image:url(https://img.freepik.com/free-photo/back-view-woman-meditating-sunset_23-2147791957.jpg?w=740&t=st=1683993046~exp=1683993646~hmac=6ae947287b8bed11ac52cc3cee8c8a044b205769c71dad72fc30a5ba5f312d4f)'>
+        <div class='c-slide-content'>
+          <div class='c-wrap c-wrap--line'>
+            <h2 class='c-slide__title'>
+              recupera tu
+              <span class='c-slide__title--large'>Salud y Vida</span>
+            </h2>
+          </div>
+          <div class='c-wrap c-wrap--small'>
+            <div class='c-slide__info'>
+              <h3 class='c-slide__subtitle'>Enuentra y elimina tus enfermedades de raiz</h3>
+              <p class='c-slide__body'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+      <script src=&quot;https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js&quot;></script>
+  
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+  <script src='https://rawgit.com/cfoehrdes/slick/master/slick/slick.js'></script>
+        <script id=&quot;rendered-js&quot; >
+  jQuery(document).ready(function () {
+    jQuery(&quot;.c-slider-init&quot;).slick({
+      dots: false,
+      nav: false,
+      arrows: false,
+      infinite: true,
+      speed: 1200,
+      autoplaySpeed: 5000,
+      slidesToShow: 1,
+      adaptiveHeight: true,
+      autoplay: true,
+      draggable: false,
+      pauseOnFocus: false,
+      pauseOnHover: false });
+  
+  
+    jQuery(&quot;.slick-current&quot;).addClass(&quot;initialAnimation&quot;);
+  
+    let transitionSetup = {
+      target: &quot;.slick-list&quot;,
+      enterClass: &quot;u-scale-out&quot;,
+      doTransition: function () {
+        var slideContainer = document.querySelector(this.target);
+        slideContainer.classList.add(this.enterClass);
+        jQuery(&quot;.slick-current&quot;).removeClass(&quot;animateIn&quot;);
+      },
+      exitTransition: function () {
+        var slideContainer = document.querySelector(this.target);
+        setTimeout(() => {
+          slideContainer.classList.remove(this.enterClass);
+          jQuery(&quot;.slick-current&quot;).addClass(&quot;animateIn&quot;);
+        }, 2000);
+      } };
+  
+  
+    var i = 0;
+    // On before slide change
+    jQuery(&quot;.c-slider-init&quot;).on(&quot;beforeChange&quot;, function (
+    event,
+    slick,
+    currentSlide,
+    nextSlide)
+    {
+      if (i == 0) {
+        event.preventDefault();
+        transitionSetup.doTransition();
+        i++;
+      } else {
+        i = 0;
+        transitionSetup.exitTransition();
+      }
+  
+      jQuery(&quot;.c-slider-init&quot;).slick(&quot;slickNext&quot;);
+      jQuery(&quot;.slick-current&quot;).removeClass(&quot;initialAnimation&quot;);
+    });
+  });
+  //# sourceURL=pen.js
+      </script>
+  
+    
+  </body>
+  
+  </html>
+  " sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation allow-downloads allow-presentation" allow="accelerometer; camera; encrypted-media; display-capture; geolocation; gyroscope; microphone; midi; clipboard-read; clipboard-write" allowtransparency="true" allowpaymentrequest="true" allowfullscreen="true" class="result-iframe">
+        </iframe>
+    </div>
+  
+  
+  
+  
+  </body></html>
