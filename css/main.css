@@ -22,8 +22,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;	
+    /* font-family: 'Nunito', sans-serif; */
+	font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
+    /* background: black; */
+    overflow: hidden;
+    overflow: hidden;
 }
 html body{		
 	font-family: 'Sugo-Pro-Classic-ExtraLight-trial';
