@@ -112,10 +112,9 @@ h3{
     border: none;
     text-align: center;
     min-width: 40%;
-    max-width: 40%;
+    max-width: 60%;
     overflow-wrap: break-word;
     background: linear-gradient(86deg, rgb(3 4 2 / 0%), transparent);
-    
     padding: 50px;
 }
 
@@ -197,7 +196,8 @@ h3{
     background: linear-gradient(to right,#d76c52 40%, #f66b31 60%, #d76c52 90%);
     background: linear-gradient(to right,#e3a81d82 40%, #f66b3196 60%, #f66b31b8 90%);
     background: linear-gradient(to right,#e3a81d38 40%, #c65623a6 60%, #c65b26 90%);
-    background: linear-gradient(to right,#dc5f20 20%, #ff7b3a 50%, #cf5a21 100%);
+    background: linear-gradient(to right,#f8f8f8 20%, #f0edec 50%, #7f04af 100%);
+    background: linear-gradient(to right,#6f00b6 20%, #300067 50%, #7a00c3 100%);
     text-decoration: none;
     border: none;
     color: rgb(255, 255, 255);
@@ -253,7 +253,7 @@ h3{
     } */
     .item1{
         min-width: auto;
-        max-width:500px;       
+        max-width: -webkit-fill-available;  
     }
 
     .item2{    

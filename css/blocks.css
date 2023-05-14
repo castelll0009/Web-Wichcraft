@@ -9,7 +9,8 @@
     background-size: cover;
     box-sizing: border-box;
     padding: 5.6vw;
-    flex-direction: row;  
+    flex-direction: row;
+    justify-content: space-around; 
 }
 .blocks-gallery{
 
@@ -80,7 +81,7 @@
     body main .blocks{        
         flex-direction: column;                
         padding: 10vw 5vw;  
-        padding-top: 50vw;
+        /* padding-top: 50vw; */
         min-height: 70vh;
     }
 }

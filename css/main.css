@@ -38,6 +38,7 @@ html body{
     background-attachment: fixed;
 	*/
 	color: silver;
+	color: white;
 }
 .backgrounds-cover{
 	background-size: cover;
@@ -54,25 +55,87 @@ main .blocks{
 */
 
 .theme-color{
-	color: #cf5a20 !important;
+	color:  #ffbc1e !important;
+	 
 }
+.theme-color-3{
+	color:  #ffbc1e !important;
+	 
+}
+
 .theme-font-titles{
 	font-family: "Sacred Hertz";
     font-family: 'Josefin Sans', sans-serif;
     color: #3ebd94;
     color: white;
+	text-align: center;
     font-size: 4em;
 }
 
 
 .theme-font-subtitles{
-	font-family: "Sugo-Pro-Classic-Bold-trial";	
-	font-size: 2em;
-}
+	font-family: Philosopher,sans-serif;
+    font-size: 1.375rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -.5px;
+    line-height: 1.45;
+    text-align: center;
+	}
 .theme-font-body{
-	font-family: "Sugo-Pro-Classic-ExtraLight-trial";
+	/* font-family: "Sugo-Pro-Classic-ExtraLight-trial";
 	font-family: 'Nunito', sans-serif;
-	font-size: 2em;	
+	font-size: 2em;	 */
+	color: #fff;
+    font-size: .875rem;
+    letter-spacing: -.0225rem;
+    line-height: 1.71;
+    margin-top: 8px;
+    opacity: .7;
+    text-align: left;
+    width: 100%;
+}
+.cards-container-text{
+	
+	background-color: #34007461;
+	background-color: #30006c;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 1px 4px 0 hsla(51,8%,69%,.4);
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+    width: 100%;
+    align-content: center;
+	align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+    position: relative;
+    width: 100%;
+
+
+}
+
+.style_text__3dzOr{
+	color: #fff;
+    font-size: .875rem;
+    line-height: 1.5;
+    margin: 0 0 5px;
+    text-align: left;
+
+}
+.cards-effect-sunshine-background{
+	background-image: -webkit-image-set(url(/static/media/bg_feedback.6f250eb….webp) 1x,url(/static/media/bg_feedback@2x.143ccd6….webp) 2x,url(/static/media/bg_feedback@3x.ff8c51c….webp) 3x);
+    background-image: image-set("/static/media/bg_feedback.6f250eb878e7c7556de8.webp" 1x,"/static/media/bg_feedback@2x.143ccd6d2c5cc52cbe8c.webp" 2x,"/static/media/bg_feedback@3x.ff8c51c9f89a11da3ee9.webp" 3x);
+    background-position-x: center;
+    background-position-y: -80px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 100%;
+    max-width: 375px;
+    padding-top: 25px;
+    width: 100%;
 }
 
 footer{
@@ -147,9 +210,10 @@ width: 100%;
 }
 */
 .circular-gradient-top-bottom{ /*degradado  circular de  arriba hacia abajo*/
-	background: linear-gradient(to top, #000000 0%, #0f0e0e3b 118%);    
-	background: linear-gradient(to top, #000000d6 0%, #0f0e0e3b 118%);	
-	background: linear-gradient(to top, #000000bd 0%, #0f0e0e3b 50%);	
+	background: linear-gradient(to top, #000000 0%, #0f0e0e3b 118%);
+    background: linear-gradient(to top, #000000d6 0%, #0f0e0e3b 118%);
+    background: linear-gradient(to top, #000000 0%, #65048d0d 50%);
+    backdrop-filter: blur(10px);
 }
 .background-color-blocks{
 	display: flex;
