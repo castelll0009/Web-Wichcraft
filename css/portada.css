@@ -3,7 +3,7 @@
   
 }
 .cont-img-portada img{
-position: fixed;
+position: absolute;
 display: block;
 width: 100%;
 }
