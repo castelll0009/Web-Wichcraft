@@ -309,6 +309,7 @@
   
     .c-slide__title--large {
       font-size: 2em;
+      font-size: 1vw;
     }
   
     .c-wrap--small {

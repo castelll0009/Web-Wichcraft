@@ -61,12 +61,25 @@ function changeImgResolution(){
 }
 
 
+  
+	 
+    
 /*cambiar la apariencia de la barra superiro al mover la rueda del mouse hacia abajo*/
+var playing = false;
 window.onscroll = function() {
   var y = window.scrollY;  
+  
   console.log(y);
-  if(y > 1){	  	  
+  if(y > 20){	 
+	 	  
 	var_header.style  =   "background-color :  rgb(0, 0, 0,0.7);";	
+	if (playing == false) {
+		document.getElementById("player").play();
+		playing = true;     
+	  } else {
+		//document.getElementById("player").pause();
+		//playing = false;    
+	  }
   }else{
 	var_header.style  =   "background-color : transparent";
 	
