@@ -114,12 +114,22 @@
   
   #main-button ~ .messenger-color {
     background: linear-gradient(0deg, #0078FF, #00C6FF);
-  }
-  
+  }  
   
   #main-button ~ .view-color {
     background: linear-gradient(0deg, #ff9100, #fdcf00);
   }
+  #main-button ~ .instagram-color {
+    background: linear-gradient(45deg, #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%);
+  }
+  #main-button ~ .facebook-color {
+    background: linear-gradient(0deg, #1877f2, #017AB1);
+  }
+         
   
   
   #main-button.open ~ a {

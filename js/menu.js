@@ -63,12 +63,13 @@ function changeImgResolution(){
 
 /*cambiar la apariencia de la barra superiro al mover la rueda del mouse hacia abajo*/
 window.onscroll = function() {
-  var y = window.scrollY;
+  var y = window.scrollY;  
   console.log(y);
-  if(y > 225){	  	  
-	var_header.style  =   "background-color :  rgb(0, 0, 0,0.7);";
+  if(y > 1){	  	  
+	var_header.style  =   "background-color :  rgb(0, 0, 0,0.7);";	
   }else{
 	var_header.style  =   "background-color : transparent";
+	
   }
   
 };
