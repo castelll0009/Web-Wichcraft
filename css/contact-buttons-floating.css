@@ -101,6 +101,9 @@
     -o-transition: .2s all linear;
   }
   
+  #main-button ~ .mail-color {
+    background: linear-gradient(0deg, #00C6FF, #0078FF);
+  }
   #main-button ~ .telegram-color {
     background: linear-gradient(0deg, #017AB1, #01ABE6);
   }
@@ -112,6 +115,8 @@
   #main-button ~ .messenger-color {
     background: linear-gradient(0deg, #0078FF, #00C6FF);
   }
+  
+  
   #main-button ~ .view-color {
     background: linear-gradient(0deg, #ff9100, #fdcf00);
   }
@@ -135,7 +140,7 @@
     bottom: 180px;
   }
    #main-button.open ~ a:nth-of-type(4) {
-    bottom: 180px;
+    bottom: 240px;
   }
   
   .wave {
