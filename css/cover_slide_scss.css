@@ -224,6 +224,7 @@
   }
   
   .c-slide__subtitle {
+    font-size: 1.2em;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
