@@ -5,7 +5,7 @@ jQuery(document).ready(function () {
     arrows: false,
     infinite: true,
     speed: 1200,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     slidesToShow: 1,
     adaptiveHeight: true,
     autoplay: true,
@@ -21,15 +21,17 @@ jQuery(document).ready(function () {
     enterClass: "u-scale-out",
     doTransition: function () {
       var slideContainer = document.querySelector(this.target);
+      setTimeout(() => {
       slideContainer.classList.add(this.enterClass);
       jQuery(".slick-current").removeClass("animateIn");
+         }, 3000);
     },
     exitTransition: function () {
       var slideContainer = document.querySelector(this.target);
       setTimeout(() => {
         slideContainer.classList.remove(this.enterClass);
         jQuery(".slick-current").addClass("animateIn");
-      }, 2000);
+      }, 000);
     } };
 
 

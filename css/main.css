@@ -215,12 +215,13 @@ width: 100%;
     background: linear-gradient(to top, #000000 0%, #65048d0d 50%);
     backdrop-filter: blur(10px);
 }
+
 .background-color-blocks{
 	display: flex;
     flex-direction: column;
     background-image: radial-gradient(circle at 50% 0, black 40%, black 70% );
     background: linear-gradient(to top, #000000 0%, #000000 118%);  	
-	background: linear-gradient(to top, #000000d4 0%, #000000d4 118%);	
+	background: linear-gradient(to top, #00000002 0%, #000000d4 118%);	
     /* margin-top: -50px;*/
 }
 .section-products{
