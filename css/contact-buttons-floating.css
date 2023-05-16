@@ -152,6 +152,9 @@
    #main-button.open ~ a:nth-of-type(4) {
     bottom: 240px;
   }
+  #main-button.open ~ a:nth-of-type(5) {
+    bottom: 300px;
+  }
   
   .wave {
     animation-name: wave;
